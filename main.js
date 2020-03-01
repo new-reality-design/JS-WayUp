@@ -1,90 +1,126 @@
 /*
     Task 1:
 
-    Необходимо создать информацию о себе , с полями где будет:
-    -ваше имя,
-    -ваш возраст,  
-    -поле с вашим статусом о семейном положении, замужем/женаты (Либо истина , либо ложь)
-    -по аналогии с предыдущим, поле с детьми
+    Необходимо выполнить сравнения переменных и записать результат рядом с выражением в виде комментария.
+    Необходимо выполнить это задание без использования console.log()
+    Данные для сравнения:
 
-    Также необходимо определить тип данных всех ваших полей и вывести результат в консоль
+    "42" == 42 // ответ- true обычное сравнение приводит строку к числу
+    "0" == 0 // тут то же самое что и выше.
+
+    "0" == false // ответ-!!!!!!!РАВНЯЕТСЯ!!! может быть true, так как false возможно подстраивается под ноль и превращается иу булинового значения в число-
+    или - 
+    может быть false, изза того что ноль сейчас не число а строка- и ему не на что равняться, так как второе значение не является ни числом ни строкой. Такие у меня две гипотезы. Не знаю какая верная..
+
+    "true" == true // ответ-!!!!!!!!! false- так как строку "true" невозможно преобразить в число- оно при сравнении окажется NaN, и не будет равно ни true (boolean), ни числу 1.
+
+    true == (1 == "1") //  ответ- true. Ответ в скобках окажется 1 = и при сравнении с true- true будет приведено к единице.
+
+    "42" === 42 // ответ- false так как сравниваются разные типы данных.
+    "0" === 0 //ответ- false
+    "0" === false //ответ- false
+    "true" === true //ответ- false
+    true === (1 === "1") //ответ- - false, так как (1 === "1") не является true
 */
 
-var firstName = 'Olga';
-var secondName = 'Bereznaja';
-var marriageStatus = true;
-var hasChildren = false;
 
-console.log('firstName: ', firstName);
-console.log('typeof firstName: ', typeof firstName);
-
-console.log('secondName: ', secondName);
-console.log('typeof secondName: ', typeof secondName);
-
-console.log('marriageStatus: ', marriageStatus);
-console.log('typeof marriageStatus: ', typeof marriageStatus);
-
-console.log('hasChildren: ', hasChildren);
-console.log('typeof hasChildren: ', typeof hasChildren);
 
 /* 
     Task 2:
 
-    Напишите скрипт, который находит площадь прямоугольника
+    Переменная a = 'foo' , а переменная b = 'bar'
+    Чему будет равен результат выражения 'a+ +b' 
+    
+    ps: два плюса - это не опечатка
 
-    -высота 23см,
-    -шириной 10см
+    В консоли не проверяла. Полагаю что выведется строка 'foobar'- плюс после а- склеит переменные А и B, плюс перед b попытается преобразовать эту переменную 'b' в число, но ничего не произойдёт потому что там символы а не строки.
 
-    Каждая сущность должна находиться в своей переменной
 */
 
-var heigthCentimeters = 23;
-var widthCentimeters = 10;
-var rectangleArea = heigthCentimeters * widthCentimeters;
+var a = 'foo';
+var b = 'bar';
+console.log(a + +b);
 
-console.log('Высота прямоуголника в см: ', heigthCentimeters);
-console.log('Ширина прямоуголника в см: ', widthCentimeters);
-console.log('Общая площадь прямоуголника в см: ', rectangleArea);
 
 /*
     Task 3:
 
-    Напиши скрипт, который находит объем цилиндра
-    
-    -высота 10м  
-    -площадь основания 4м
+    Напишите результат сравнения следующих выражений :
 
-    Каждая сущность должна находиться в своей переменной
+    "ананас" > "яблоко" // false. Яблоко - больше ананаса.
+    undefined == null // у обоих типов отсутствует значение- поэтому при сравнении выводится true 
+    undefined === null // эти два типа данных- разные. Ответом будет false.
+
+    Необходимо выполнить это задание без использования console.log()
+
 */
-
-var cylinderHeight = 10;
-var cylinderBaseArea = 4;
-var cylinderVolume = cylinderHeight * cylinderBaseArea;
-
-console.log('Высота цилиндра в м: ', cylinderHeight);
-console.log('Площадь основания цилиндра в м: ', cylinderBaseArea);
-console.log('Объём цилиндра в м: ', cylinderVolume);
 
 /*
     Task 4:
 
-    Напиши рядом с каждым выражением , тот ответ который по вашему мнению выведет console.
-    И потом сравните ваш результат с тем что на самом деле вывела консоль.
-    
-    Infinity - "1" //Infinity +++ Ok
-    "42" + 42  //4242 +++ Ok
-    2 + "1 1"  //13 ---  not ok. правильный ответ: '21' '1'
-    99 + 101  //200 +++ Ok
-    "1" - "1"  //NaN ---  not ok. правильный ответ: 0
-    "Result: " + 10/2  //NaN ---  not ok. правильный ответ: '5'
-    3 + " bananas " + 2 + " apples "  // 3 bananas 2 apples +++ Ok
-
+    Создайте свою конструкцию УСЛОВИЕ
+    Минимальное количество условий в одной конструкции: 5
 */
 
-console.log(Infinity - "1");
-console.log("42" + 42);
-console.log(2 + "1 1");
-console.log(99 + 101);
-console.log("1" - "1");
-console.log("Result: " + 10 / 2);
-console.log(3 + " bananas " + 2 + " apples ");
+var dayOfWeek = 'thursday';
+
+switch (dayOfWeek) {
+  case 'monday':
+    console.log('День 1 - Начало творческой недели');
+    break;
+
+  case 'tuesday':
+    console.log('День 2 - Продолжение творческой недели');
+    break;
+
+  case 'wednesday':
+    console.log('День 3 - Среда это маленькая пятница');
+    break;
+
+  case 'thursday':
+    console.log('День 4 - Почти что конец творческой недели');
+    break;
+
+  case 'friday':
+    console.log('День 5 - Завершение творческой недели');
+    break;
+
+  default:
+    console.log('Сегодня, похоже, выходной день');
+}
+
+
+/*
+    Task 5:
+
+    Созданную вами конструкцию из задания номер 4, запишите с помощью тернарного оператора
+
+*/
+var result;
+dayOfWeek == 'monday' ? result = 'Это день 1' :
+  dayOfWeek == 'tuesday' ? result = 'Это день 2' :
+  dayOfWeek == 'wednesday' ? result = 'Это день 3' :
+  dayOfWeek == 'thursday' ? result = 'Это день 4' :
+  dayOfWeek == 'friday' ? result = 'Это день 5' :
+  result = 'Сегодня выходной!';
+
+console.log(result);
+
+
+/*
+    Task 6:
+
+    Запросить у пользователя число от 1 до 10.
+    И сравнить введеное пользователем число с тем, что будет у вас в условии.
+    При КАЖДОМ совпадении числа, выводить сообщение в МОДАЛЬНОМ окне : "Вы ввели число n", где n - то число
+    которое ввел пользователь. Также установите значение по умолчанию.
+
+*/
+var answer = 5;
+var question = +prompt('Напишите число от 1 до 10');
+
+if (question == answer) {
+  alert('Отлично, вы ввели число ' + answer + '!');
+} else {
+  alert('Попробуйте другое число..');
+}

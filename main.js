@@ -1,90 +1,158 @@
 /*
-    Task 1:
+    TASK 1
 
-    Необходимо создать информацию о себе , с полями где будет:
-    -ваше имя,
-    -ваш возраст,  
-    -поле с вашим статусом о семейном положении, замужем/женаты (Либо истина , либо ложь)
-    -по аналогии с предыдущим, поле с детьми
-
-    Также необходимо определить тип данных всех ваших полей и вывести результат в консоль
+    Вывести в консоль с помощью цикла  WHILE, все нечетные числа от 30 до 40
 */
 
-var firstName = 'Olga';
-var secondName = 'Bereznaja';
-var marriageStatus = true;
-var hasChildren = false;
+var i = 30;
 
-console.log('firstName: ', firstName);
-console.log('typeof firstName: ', typeof firstName);
+while (i < 40) {
+  i++;
+  if (i % 2 == 0) {
+    continue;
+  }
+  console.log('TASK 1 i: ', i);
+}
 
-console.log('secondName: ', secondName);
-console.log('typeof secondName: ', typeof secondName);
+/*
+    TASK 2
 
-console.log('marriageStatus: ', marriageStatus);
-console.log('typeof marriageStatus: ', typeof marriageStatus);
+    Вывести в консоль с помощью цикла FOR, все четные числа от 70 до 40. Первым четным числом должно быть 70.     
+*/
 
-console.log('hasChildren: ', hasChildren);
-console.log('typeof hasChildren: ', typeof hasChildren);
+//ВАРИАНТ 1
+for (var k = 70; k >= 40; k--) {
+  if (k % 2 != 0) {
+    continue;
+  }
+  console.log('TASK 2 k: ', k);
+}
 
+//ВАРИАНТ 2
+for (var k = 70; k >= 40; k = k - 2) {
+  console.log('TASK 2 k: ', k);
+}
+
+/*
+    TASK 3
+
+    Переведите цикл FOR из задания 2, в цикл WHILE.      
+*/
+
+var m = 70;
+
+while (m >= 40) {
+  m--;
+  if (m % 2 != 0) {
+    continue;
+  }
+  console.log('TASK 3 m: ', m);
+}
+
+/*
+    TASK 4
+
+    С помощью любого известного Вам цикла из JavaScript, найдите сумму чисел от 1 до 100, и выведите результат в консоль.       
+*/
+
+var sum = 0;
+
+for (var y = 1; y <= 100; y++) {
+  sum = sum + y;
+}
+console.log('TASK 4 sum: ', sum);
+
+/*
+    TASK 5
+
+    Вывести 10 строчек со смайликом : ':)' . На первой строчке один смайлик, на второй два,и так далее. На последней должно быть 10 смайликов.   
+    
+*/
+
+var out5 = '';
+
+for (var r = 0; r < 10; r++) {
+  out5 = out5 + ':)';
+  console.log('out5: ', out5);
+}
+
+/*
+    TASK 6
+
+    Напишите программу, которая выводит на экран числа от 1 до 150. 
+    При этом вместо чисел, кратных трем, программа должна выводить слово «Java»,
+    а вместо чисел, кратных пяти — слово «Script». 
+    Если число кратно и 3, и 5, то программа должна выводить слово «JavaScript»       
+*/
+
+//ВАРИАНТ 1
+for (var e = 1; e <= 150; e++) {
+  if (e % 3 == 0 && e % 5 == 0) {
+    console.log('JavaScript');
+  } else if (e % 5 == 0) {
+    console.log('Script');
+  } else if (e % 3 == 0) {
+    console.log('Java');
+  } else {
+    console.log('e: ', e);
+  }
+}
+
+//ВАРИАНТ 2
+for (var w = 1; w <= 150; w++) {
+  w % 3 == 0 && w % 5 == 0 ? console.log('JavaScript') :
+    w % 3 == 0 ? console.log('Java') :
+    w % 5 == 0 ? console.log('Script') :
+    console.log('w: ', w);
+}
 /* 
-    Task 2:
-
-    Напишите скрипт, который находит площадь прямоугольника
-
-    -высота 23см,
-    -шириной 10см
-
-    Каждая сущность должна находиться в своей переменной
+    TASK 7
+    У нас есть число 1000
+    Делите его на 2 столько раз, пока результат деления не станет меньше 50.
+    Посчитайте количество итераций необходимых для выхода из цикла и выведите результат в консоль
 */
 
-var heigthCentimeters = 23;
-var widthCentimeters = 10;
-var rectangleArea = heigthCentimeters * widthCentimeters;
+var num7 = 1000,
+  num7divided = 0,
+  count7 = 0;
 
-console.log('Высота прямоуголника в см: ', heigthCentimeters);
-console.log('Ширина прямоуголника в см: ', widthCentimeters);
-console.log('Общая площадь прямоуголника в см: ', rectangleArea);
+while (num7 > 50) {
+  num7divided = num7 / 2;
+  num7 = num7divided;
+  count7++;
+  console.log('num7 : ', num7);
+}
+console.log('count7 : ', count7);
+
 
 /*
-    Task 3:
-
-    Напиши скрипт, который находит объем цилиндра
-    
-    -высота 10м  
-    -площадь основания 4м
-
-    Каждая сущность должна находиться в своей переменной
+    TASK 8
+    Напишите программу, которая используя цикл while выведет все числа от 45 до 670, кратные 10.
 */
 
-var cylinderHeight = 10;
-var cylinderBaseArea = 4;
-var cylinderVolume = cylinderHeight * cylinderBaseArea;
+//ВАРИАНТ 1
+var numTask8_1 = 45,
+  outTask8_1 = '';
 
-console.log('Высота цилиндра в м: ', cylinderHeight);
-console.log('Площадь основания цилиндра в м: ', cylinderBaseArea);
-console.log('Объём цилиндра в м: ', cylinderVolume);
+while (numTask8_1 <= 670) {
+  numTask8_1++;
 
-/*
-    Task 4:
+  if (numTask8_1 % 10 != 0) {
+    continue;
+  }
+  outTask8_1 += numTask8_1 + ' ';
+}
+console.log('outTask8_1: ', outTask8_1);
 
-    Напиши рядом с каждым выражением , тот ответ который по вашему мнению выведет console.
-    И потом сравните ваш результат с тем что на самом деле вывела консоль.
-    
-    Infinity - "1" //Infinity +++ Ok
-    "42" + 42  //4242 +++ Ok
-    2 + "1 1"  //13 ---  not ok. правильный ответ: '21' '1'
-    99 + 101  //200 +++ Ok
-    "1" - "1"  //NaN ---  not ok. правильный ответ: 0
-    "Result: " + 10/2  //NaN ---  not ok. правильный ответ: '5'
-    3 + " bananas " + 2 + " apples "  // 3 bananas 2 apples +++ Ok
+//ВАРИАНТ 2
+var numTask8_2 = 45,
+  outTask8_2 = '';
 
-*/
+while (numTask8_2 <= 670) {
+  numTask8_2++;
 
-console.log(Infinity - "1");
-console.log("42" + 42);
-console.log(2 + "1 1");
-console.log(99 + 101);
-console.log("1" - "1");
-console.log("Result: " + 10 / 2);
-console.log(3 + " bananas " + 2 + " apples ");
+  if (numTask8_2 % 10 == 0) {
+    outTask8_2 += numTask8_2 + ' ';
+  }
+}
+console.log('outTask8_2: ', outTask8_2);
